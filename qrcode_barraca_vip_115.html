@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>QR Code — Barraca VIP 115</title>
+<style>
+  @media print {
+    body { background: white !important; }
+    .card { box-shadow: none !important; border: 2px solid #1B5E20 !important; }
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 100vh; margin: 0;
+    background: linear-gradient(180deg, #FFF7ED 0%, #FEF3E7 100%);
+    padding: 1rem;
+  }
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(27, 94, 32,0.20);
+    max-width: 380px;
+    border: 4px solid #FF8C42;
+    position: relative;
+    overflow: hidden;
+  }
+  /* 🇧🇷 Bandeira do Brasil sutil ao fundo do card */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    aspect-ratio: 10 / 7;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700'><rect width='1000' height='700' fill='%23009C3B'/><polygon points='500,75 925,350 500,625 75,350' fill='%23FFDF00'/><circle cx='500' cy='350' r='175' fill='%23002776'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .card > * {
+    position: relative;
+    z-index: 2;
+  }
+  /* 〰️ Ondas decorativas no QR */
+  .qr-ondas {
+    margin: 0.4rem auto 0.8rem;
+    height: 12px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'><path d='M0,12 Q150,0 300,12 T600,12 T900,12 T1200,12' stroke='%231B5E20' stroke-width='2.5' fill='none' opacity='0.85'/><path d='M0,18 Q150,6 300,18 T600,18 T900,18 T1200,18' stroke='%231B5E20' stroke-width='2' fill='none' opacity='0.5'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    max-width: 80%;
+  }
+  .logo-emoji {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%);
+    border: 3px solid #1B5E20;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0 auto 1rem;
+  }
+  .logo {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 3px solid #1B5E20;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  h1 {
+    margin: 0 0 0.3rem;
+    font-size: 1.4rem;
+    color: #1B5E20;
+    letter-spacing: 0.02em;
+    font-weight: 800;
+  }
+  .subtitulo {
+    color: #FF8C42;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+  }
+  .endereco {
+    color: #64748B;
+    font-size: 0.82rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+  .qr {
+    width: 220px; height: 220px;
+    background: white;
+    padding: 8px;
+    border: 2px solid #1B5E20;
+    border-radius: 12px;
+  }
+  .instrucoes {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: #1B5E20;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .badge-cardapio {
+    background: #1B5E20;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.1;
+  }
+  .badge-cardapio .sep {
+    color: #FF8C42;
+    font-weight: 900;
+  }
+  .instrucoes-multi {
+    margin-top: 1.2rem;
+    font-size: 0.78rem;
+    color: #1B5E20;
+    line-height: 1.5;
+  }
+  .instrucoes-multi .linha {
+    margin: 4px 0;
+    font-weight: 600;
+  }
+  .instrucoes-multi .linha + .linha {
+    border-top: 1px dashed #E5E7EB;
+    padding-top: 4px;
+  }
+  .instrucoes-multi .icone {
+    margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo-emoji">👑</div>
+  <div class="badge-cardapio">
+    <span>CARDÁPIO DIGITAL</span>
+    <span class="sep">·</span>
+    <span>DIGITAL MENU</span>
+    <span class="sep">·</span>
+    <span>MENÚ DIGITAL</span>
+  </div>
+  <h1>BARRACA VIP</h1>
+  <div class="subtitulo">— 115 —</div>
+  <div class="qr-ondas"></div>
+  <div class="endereco">Copacabana, Rio de Janeiro / RJ</div>
+
+  <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://barraca-vip-115.vercel.app&color=1B5E20&bgcolor=ffffff&qzone=2&format=png" alt="QR Code Barraca VIP 115">
+
+  <div class="instrucoes-multi">
+    <div class="linha">
+      <span class="icone">🇧🇷</span> Aponte sua câmera para o QR Code
+    </div>
+    <div class="linha">
+      <span class="icone">🇺🇸</span> Point your camera at the QR Code
+    </div>
+    <div class="linha">
+      <span class="icone">🇪🇸</span> Apunta tu cámara al código QR
+    </div>
+    <div class="linha" style="margin-top:8px; color:#FF8C42; font-weight:700;">
+      🌍 Cardápio em 8 idiomas / 8 languages / 8 idiomas
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
